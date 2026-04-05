@@ -140,7 +140,8 @@ Addresses key agricultural gaps:
 🔗 https://github.com/Snigdha-0210
 
 ---
-
+##Markdown
+🏆 Built for Hackathon – Real-world agriculture impact solution
 ## ⭐ Support
 
 If you like this project, consider giving it a ⭐ on GitHub!
