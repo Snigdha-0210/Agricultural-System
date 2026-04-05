@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="KisanMitra v2 — AI-powered Universal Smart Agriculture Advisory Platform for all Indian farmers. Crop, livestock, fish, poultry, beekeeping, hydroponics, urban farming and more."/>
+  <title>KisanMitra v2 — Smart Agriculture Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link rel="stylesheet" href="styles/onboarding.css"/>
+  <link rel="stylesheet" href="styles/dashboard.css"/>
+  <link rel="stylesheet" href="styles/voice.css"/>
+</head>
+<body>
+<div id="app">
+
+  <!-- ══ SPLASH ══ -->
+  <div id="splash-screen" class="splash-screen">
+    <div class="splash-bg-anim">
+      <div class="splash-orb s1"></div>
+      <div class="splash-orb s2"></div>
+      <div class="splash-orb s3"></div>
+    </div>
+    <div class="splash-content">
+      <div class="splash-logo-wrap">
+        <div class="splash-logo">🌾</div>
+        <div class="splash-logo-ring"></div>
+      </div>
+      <h1 class="splash-title">KisanMitra</h1>
+      <p class="splash-subtitle">किसान मित्र &nbsp;•&nbsp; v2.0</p>
+      <p class="splash-tagline">AI-Powered Smart Agriculture Platform</p>
+      <div class="splash-pills">
+        <span class="splash-pill">🌱 Crop</span>
+        <span class="splash-pill">🐄 Livestock</span>
+        <span class="splash-pill">🐟 Aquaculture</span>
+        <span class="splash-pill">💧 Hydroponics</span>
+        <span class="splash-pill">🏙️ Urban</span>
+      </div>
+      <div class="splash-loader"><div class="loader-bar"></div></div>
+    </div>
+  </div>
+
+  <!-- ══ LOGIN SCREEN ══ -->
+  <div id="login-screen" class="screen hidden" style="background:var(--bg-color); min-height:100vh; padding-top:40px;">
+    <div class="lang-container" style="text-align:center;">
+      <div class="lang-header">
+        <div style="font-size:3.5rem; margin-bottom:10px;">🌾</div>
+        <h2>Welcome to KisanMitra</h2>
+        <p style="margin-bottom:var(--s5);">Login to manage your farm</p>
+      </div>
+      <div style="margin-bottom:var(--s4); text-align:left;">
+         <label class="input-label" style="display:block; text-align:left;">Phone Number</label>
+         <input type="tel" id="login-phone" class="input-field" placeholder="10-digit mobile number" maxlength="10" style="text-align:center; font-size:1.2rem; letter-spacing:2px; font-weight:bold;"/>
+      </div>
+      <button class="btn-primary full-width" id="login-btn">Send OTP / Login</button>
+      <div style="margin-top:20px; font-size:0.85rem; color:var(--text-secondary);">If you are a new user, you will be guided to set up your specific farm profile based on the species you farm.</div>
+    </div>
+  </div>
+
+  <!-- ══ LANGUAGE ══ -->
+  <div id="language-screen" class="screen hidden">
+    <div class="lang-container">
+      <div class="lang-header">
+        <div class="lang-logo">🌾</div>
+        <h2>Choose Language</h2>
+        <p>अपनी भाषा चुनें</p>
+      </div>
+      <div class="lang-grid">
+        <button class="lang-btn active" data-lang="en"><span class="lang-flag">🇮🇳</span><span>English</span></button>
+        <button class="lang-btn" data-lang="hi"><span class="lang-flag">🇮🇳</span><span>हिन्दी</span></button>
+        <button class="lang-btn" data-lang="ta"><span class="lang-flag">🇮🇳</span><span>தமிழ்</span></button>
+        <button class="lang-btn" data-lang="te"><span class="lang-flag">🇮🇳</span><span>తెలుగు</span></button>
+        <button class="lang-btn" data-lang="mr"><span class="lang-flag">🇮🇳</span><span>मराठी</span></button>
+        <button class="lang-btn" data-lang="bn"><span class="lang-flag">🇮🇳</span><span>বাংলা</span></button>
+      </div>
+      <button class="btn-primary full-width" id="confirm-lang">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ══ ONBOARDING ══ -->
+  <div id="onboarding-screen" class="screen hidden">
+    <div class="onboarding-container">
+      <div class="onboarding-progress">
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+        <span class="progress-text" id="progress-text">Step 1 of 5</span>
+      </div>
+      <div id="onboarding-steps"></div>
+    </div>
+  </div>
+
+  <!-- ══ DASHBOARD ══ -->
+  <div id="dashboard-screen" class="screen hidden">
+    <!-- Top Nav -->
+    <header class="top-nav" id="top-nav">
+      <div class="nav-left">
+        <button class="menu-btn" id="menu-btn" aria-label="Open menu">☰</button>
+        <div class="nav-brand">
+          <span class="nav-logo">🌾</span>
+          <div>
+            <span class="nav-title">KisanMitra</span>
+            <span class="nav-version">v2.0</span>
+          </div>
+        </div>
+      </div>
+      <div class="nav-right">
+        <button class="icon-btn" id="voice-btn-nav" aria-label="Voice command" title="Voice Command">🎙️</button>
+        <button class="icon-btn" id="alert-btn" aria-label="Alerts">🔔<span class="badge" id="alert-badge">0</span></button>
+        <div class="nav-avatar" id="nav-avatar">👤</div>
+      </div>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay hidden" id="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar hidden" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-profile">
+          <div class="profile-avatar-lg" id="sidebar-avatar">🧑‍🌾</div>
+          <div>
+            <div class="profile-name" id="sidebar-name">Farmer</div>
+            <div class="profile-tag" id="sidebar-tag">Crop Farmer</div>
+            <div class="profile-location" id="sidebar-location">📍 —</div>
+          </div>
+        </div>
+        <button class="close-sidebar" id="close-sidebar">✕</button>
+      </div>
+      <!-- Farm Health in Sidebar -->
+      <div class="sidebar-health" id="sidebar-health"></div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" data-tab="dashboard">🏠 Dashboard</a>
+        <a class="sidebar-link" data-tab="tasks">✅ Today's Actions</a>
+        <a class="sidebar-link" data-tab="alerts">⚠️ Risks & Alerts</a>
+        <a class="sidebar-link" data-tab="profit">💰 Profit Opportunities</a>
+        <a class="sidebar-link" data-tab="guide">📖 Beginner Guide</a>
+        <a class="sidebar-link" data-tab="market">📈 Market Prices</a>
+        <a class="sidebar-link" data-tab="schemes">🏛️ Govt. Schemes</a>
+        <a class="sidebar-link" data-tab="learn">🎥 Learn</a>
+        <a class="sidebar-link" data-tab="knowledge">📚 Knowledge Hub</a>
+        <a class="sidebar-link" data-tab="marketplace">🏪 Marketplace</a>
+        <a class="sidebar-link" data-tab="weather">🌤️ Weather</a>
+        <a class="sidebar-link" data-tab="analytics">📊 Farm Analytics</a>
+        <a class="sidebar-link" data-tab="sms">📱 SMS / Offline</a>
+        <a class="sidebar-link" data-tab="settings">⚙️ Settings</a>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="btn-outline full-width" id="reset-profile-btn">🔄 Reset Profile</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main" id="dashboard-main"></main>
+
+    <!-- Bottom Nav -->
+    <nav class="bottom-nav" id="bottom-nav">
+      <button class="bnav-btn active" data-tab="dashboard"><span class="bnav-icon">🏠</span><span class="bnav-label">Home</span></button>
+      <button class="bnav-btn" data-tab="tasks"><span class="bnav-icon">✅</span><span class="bnav-label">Tasks</span></button>
+      <button class="bnav-btn" data-tab="schemes"><span class="bnav-icon">🏛️</span><span class="bnav-label">Schemes</span></button>
+      <button class="bnav-btn" data-tab="marketplace"><span class="bnav-icon">🏪</span><span class="bnav-label">Market</span></button>
+      <button class="bnav-btn" data-tab="learn"><span class="bnav-icon">🎥</span><span class="bnav-label">Learn</span></button>
+      <button class="bnav-btn" data-tab="knowledge"><span class="bnav-icon">📚</span><span class="bnav-label">Hub</span></button>
+    </nav>
+  </div>
+
+  <!-- ══ VOICE OVERLAY ══ -->
+  <div id="voice-overlay" class="voice-overlay hidden">
+    <div class="voice-modal">
+      <button class="voice-close" id="voice-close">✕</button>
+      <div class="voice-header">
+        <div class="voice-wave" id="voice-wave">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p id="voice-listening-text">Tap mic or select a suggestion</p>
+      </div>
+      <div class="voice-suggestions">
+        <p class="voice-hint">Try asking:</p>
+        <div class="voice-chips">
+          <button class="voice-chip" data-query="what should I do today">🗣️ "What to do today?"</button>
+          <button class="voice-chip" data-query="check weather">🌤️ "Check weather"</button>
+          <button class="voice-chip" data-query="pest alert">🐛 "Any pest alerts?"</button>
+          <button class="voice-chip" data-query="market prices">💰 "Market prices"</button>
+          <button class="voice-chip" data-query="show schemes">🏛️ "Government schemes"</button>
+          <button class="voice-chip" data-query="profit tips">📈 "Profit opportunities"</button>
+        </div>
+      </div>
+      <div class="voice-response hidden" id="voice-response">
+        <div class="voice-response-text" id="voice-response-text"></div>
+      </div>
+      <button class="voice-mic-btn" id="voice-mic-btn">🎙️</button>
+    </div>
+  </div>
+
+  <!-- ══ ONE-TAP MODAL ══ -->
+  <div id="one-tap-overlay" class="voice-overlay hidden">
+    <div class="voice-modal one-tap-modal">
+      <button class="voice-close" id="one-tap-close">✕</button>
+      <h3 class="modal-title">🌾 What Should I Do Today?</h3>
+      <div id="one-tap-content" class="one-tap-content"></div>
+    </div>
+  </div>
+
+  <!-- ══ ALERT PANEL ══ -->
+  <div id="alert-panel" class="alert-panel hidden">
+    <div class="alert-panel-header">
+      <h3>🔔 Live Alerts</h3>
+      <button id="close-alert-panel">✕</button>
+    </div>
+    <div id="alert-panel-content" class="alert-panel-content"></div>
+  </div>
+
+  <!-- ══ SCHEME APPLY MODAL ══ -->
+  <div id="scheme-overlay" class="voice-overlay hidden">
+    <div class="voice-modal" style="text-align:left;">
+      <button class="voice-close" id="scheme-close">✕</button>
+      <h3 class="modal-title" id="scheme-modal-title" style="margin-bottom:var(--s4);">Apply for Scheme</h3>
+      <div style="margin-bottom:var(--s4);">
+        <label class="input-label">Aadhaar Number / Farm ID</label>
+        <input type="text" class="input-field" placeholder="xxxx-xxxx-xxxx" />
+      </div>
+      <div style="margin-bottom:var(--s4);">
+        <label class="input-label">Bank Account Details (Linked to UID)</label>
+        <input type="text" class="input-field" placeholder="Account Number & IFSC" />
+      </div>
+      <div style="margin-bottom:var(--s4);">
+        <label class="input-label">Upload Supportive Docs (Optional)</label>
+        <div style="border:2px dashed var(--border-color); padding:var(--s4); text-align:center; border-radius:var(--radius-md); font-size:0.9rem; color:var(--text-secondary);">Click to upload file or drop file here</div>
+      </div>
+      <button class="btn-primary full-width" id="scheme-submit-btn">Submit Direct Application</button>
+    </div>
+  </div>
+
+</div><!-- #app -->
+
+<script src="data/farmData.js"></script>
+<script src="data/weatherData.js"></script>
+<script src="data/marketData.js"></script>
+<script src="data/schemesData.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/onboarding.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/voice.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
