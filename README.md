@@ -2,7 +2,7 @@
 
 🚀 Built to solve real-world agricultural challenges using AI, real-time data, and user-centric design.
 
-The **Smart Agriculture Advisory System** is an AI-powered platform that provides personalized, real-time farming guidance to help farmers make better decisions, reduce risks, and improve productivity across all types of agriculture.
+> A unified platform that helps farmers decide, learn, and earn using real-time data and intelligent recommendations.
 
 ---
 
@@ -23,7 +23,7 @@ The **Smart Agriculture Advisory System** is an AI-powered platform that provide
 
 ### 🏛️ Government Schemes
 
-* Discover schemes like PM-KISAN, PMFBY, eNAM
+* Discover and apply for schemes like PM-KISAN, PMFBY, eNAM directly within the platform
 * Eligibility check
 * Direct application support
 
@@ -59,8 +59,8 @@ Addresses key agricultural gaps:
 
 ## 🛠️ Tech Stack
 
-* Frontend: (Add yours — e.g., React / HTML / CSS / JS)
-* Backend: (Add yours — e.g., Node.js / Firebase)
+* Frontend: HTML, CSS, JavaScript
+* Backend: Prototype (no backend implemented)
 * APIs:
 
   * Weather API (OpenWeatherMap)
@@ -91,41 +91,37 @@ Addresses key agricultural gaps:
 
 ## 📸 Screenshots
 
-### 🏠 Home Dashboard
+### 🏠 Dashboard / Home
 
-![Home Screen](images/home.png)
+![Home](images/hub.png)
 
-### 📋 Tasks View
+### 📋 Tasks & Actions
 
 ![Tasks](images/tasks.png)
 
-### 🎥 Learn Section
+### 🏛️ Government Schemes
 
-![Learn](images/learn.png)
+![Schemes](images/yojna.png)
 
-👉 **How to add screenshots:**
+### 🎥 Learn from Experts
 
-1. Create a folder in your repo named:
+![Learn](images/video.png)
 
-   ```
-   images
-   ```
-2. Add your screenshots inside it
-3. Rename them exactly:
+### 📚 Knowledge Center
 
-   * `home.png`
-   * `tasks.png`
-   * `learn.png`
+![Knowledge](images/knowledge.png)
 
----
+### 🌐 Language / Accessibility
 
-## 🎥 Demo
+![Language](images/language.png)
 
-👉 Add your demo video link here (YouTube / Drive):
+### 📈 Market Insights
 
-```
-https://your-demo-link.com
-```
+![Market](images/market.png)
+
+### 🔐 Login Page
+
+![Login](images/login.png)
 
 ---
 
@@ -140,8 +136,8 @@ https://your-demo-link.com
 
 ## 👨‍💻 Author
 
-**Your Name**
-(Add your GitHub profile link here)
+**Snigdha**
+🔗 https://github.com/Snigdha-0210
 
 ---
 
