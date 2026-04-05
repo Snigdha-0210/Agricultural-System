@@ -140,7 +140,7 @@ Addresses key agricultural gaps:
 🔗 https://github.com/Snigdha-0210
 
 ---
-##Markdown
+**##Markdown**
 🏆 Built for Hackathon – Real-world agriculture impact solution
 ## ⭐ Support
 
