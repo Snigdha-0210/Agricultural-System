@@ -1,0 +1,17 @@
+# Ignore node modules (if you ever use npm)
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore OS/system files
+.DS_Store
+Thumbs.db
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore build/output folders (if you add later)
+dist/
+build/
