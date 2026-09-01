@@ -685,33 +685,53 @@ const Dashboard = (() => {
         ${modules.map((m, idx)=>{
           const isExp = expandedModuleIndex === idx;
           return `
-          <div style="background:var(--slate-50); border-radius:var(--r-md); padding:var(--s4); border-left:4px solid var(--primary); box-shadow:var(--shadow-sm);">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
-              <span style="font-size:0.72rem; font-weight:800; background:var(--green-100); color:var(--green-800); padding:2px 8px; border-radius:12px;">${m.num || 'Core Module'}</span>
-              <button class="toggle-module-btn" data-midx="${idx}" style="background:none; border:none; font-size:0.82rem; font-weight:700; color:var(--primary); cursor:pointer;">
-                ${isExp ? '▲ Hide Fundamentals' : '📖 Read Full Concept Offline ▼'}
+          <div class="knowledge-module-card" data-midx="${idx}" style="background:var(--slate-50); border-radius:var(--r-md); padding:var(--s4); border-left:4px solid var(--primary); box-shadow:var(--shadow-sm); cursor:pointer; transition:all 0.2s;">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+              <span style="font-size:0.75rem; font-weight:800; background:var(--green-100); color:var(--green-800); padding:3px 10px; border-radius:12px;">${m.num || 'Core Module ' + (idx+1)}</span>
+              <button class="toggle-module-btn" data-midx="${idx}" style="background:#fff; border:1px solid var(--border-color); border-radius:var(--r-full); padding:4px 12px; font-size:0.8rem; font-weight:700; color:var(--primary); cursor:pointer;">
+                ${isExp ? '▲ Collapse Offline Guide' : '📖 Read Full Concept Offline ▼'}
               </button>
             </div>
-            <div style="font-weight:800; font-size:1.05rem; color:var(--text-primary); margin-bottom:6px;">${m.title}</div>
-            <div style="font-size:0.88rem; color:var(--text-secondary); line-height:1.5; margin-bottom:10px;">${m.desc}</div>
+            <div style="font-weight:800; font-size:1.08rem; color:var(--text-primary); margin-bottom:6px;">${m.title}</div>
+            <div style="font-size:0.88rem; color:var(--text-secondary); line-height:1.55; margin-bottom:10px;">${m.desc}</div>
             
             ${isExp ? `
-              <div style="background:#fff; padding:14px; border-radius:var(--r-md); border:1px solid var(--border-color); margin:10px 0; font-size:0.85rem; color:var(--text-primary); line-height:1.6;">
-                <div style="font-weight:800; color:var(--primary); margin-bottom:6px;">🔬 Core Biological Principles & Standard Operating Procedure:</div>
-                <p style="margin:0 0 8px 0; color:var(--text-secondary);">
-                  This foundational module provides complete practical guidance. Key agronomic factors include maintaining optimal moisture zones, adhering to biosecurity and seed-rate standards, and monitoring daily growth milestones.
-                </p>
-                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:8px; margin:8px 0; background:var(--slate-50); padding:10px; border-radius:6px;">
-                  <div><b>🗓️ Optimum Timing:</b> Year-round seasonal sync</div>
-                  <div><b>💧 Water Schedule:</b> Drip / Micro-irrigation</div>
-                  <div><b>🌱 Organic Shield:</b> Neemastra (5%)</div>
-                  <div><b>💰 Yield Target:</b> High export grade</div>
+              <div style="background:#fff; padding:16px; border-radius:var(--r-md); border:1.5px solid var(--primary); margin:12px 0; font-size:0.86rem; color:var(--text-primary); line-height:1.65; box-shadow:var(--shadow-md);">
+                <div style="font-weight:800; font-size:0.95rem; color:var(--primary); margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+                  <span>🔬</span> <span>Comprehensive Scientific Principles & Standard Operating Procedure (SOP):</span>
+                </div>
+                
+                <div style="margin-bottom:12px; color:var(--text-secondary);">
+                  ${m.fundamentals || m.desc}
+                </div>
+
+                <div style="background:var(--slate-50); border-radius:var(--r-md); padding:12px; margin-bottom:12px; border-left:3px solid var(--green-600);">
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:6px;">🛠️ Step-by-Step Execution Protocol:</div>
+                  <ol style="margin:0; padding-left:18px; color:var(--text-secondary); display:flex; flex-direction:column; gap:4px;">
+                    <li><b>Preparation & Setup:</b> Disinfect work area / soil tract with approved organic sanitizers (2% lime / sodium hypochlorite).</li>
+                    <li><b>Optimal Input Management:</b> Apply calibrated feed, nutrients, or bio-inoculants strictly adhering to developmental phase.</li>
+                    <li><b>Daily Monitoring:</b> Track ambient temperature, relative humidity, moisture, and biological activity twice daily.</li>
+                    <li><b>Preventive Health Shield:</b> Execute scheduled prophylaxis and biological pest barriers before pest pressure builds.</li>
+                    <li><b>Harvest & Value-Add:</b> Harvest at peak physiological maturity, grade according to standard specifications, and package in clean containers.</li>
+                  </ol>
+                </div>
+
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(135px, 1fr)); gap:8px; margin-bottom:12px; background:var(--green-50); padding:10px 12px; border-radius:var(--r-md);">
+                  <div><span style="font-size:0.75rem; color:var(--green-800); font-weight:700;">🌡️ Climate Control:</span><br/><b>Strict Thermoregulation</b></div>
+                  <div><span style="font-size:0.75rem; color:var(--green-800); font-weight:700;">💧 Water / Feed:</span><br/><b>Precision Scheduled</b></div>
+                  <div><span style="font-size:0.75rem; color:var(--green-800); font-weight:700;">🛡️ Bio-Defense:</span><br/><b>Zero-Residue Organic</b></div>
+                  <div><span style="font-size:0.75rem; color:var(--green-800); font-weight:700;">💰 Quality Grade:</span><br/><b>A-Grade Certified</b></div>
+                </div>
+
+                <div style="font-size:0.8rem; color:var(--text-muted);">
+                  💡 <i>Tip: You have access to this full training manual offline anytime inside KisanMitra.</i>
                 </div>
               </div>
             ` : ''}
 
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
-              <a href="${m.linkUrl}" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem; font-weight:700; color:var(--primary); text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; padding-top:6px; border-top:1px dashed var(--border-color);">
+              <span style="font-size:0.78rem; color:var(--text-muted);">Source & External Reference:</span>
+              <a href="${m.linkUrl}" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem; font-weight:700; color:var(--primary); text-decoration:none; display:inline-flex; align-items:center; gap:4px; padding:3px 8px; border-radius:6px; background:#fff; border:1px solid var(--border-color);" onclick="event.stopPropagation();">
                 ${m.linkText || 'Official Research Deep-Dive'} ↗
               </a>
             </div>
@@ -1140,8 +1160,17 @@ const Dashboard = (() => {
           renderTab('knowledge');
         });
       });
+      document.querySelectorAll('.knowledge-module-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.tagName === 'A' || e.target.closest('a')) return;
+          const idx = parseInt(card.dataset.midx, 10);
+          expandedModuleIndex = expandedModuleIndex === idx ? null : idx;
+          renderTab('knowledge');
+        });
+      });
       document.querySelectorAll('.toggle-module-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
           const idx = parseInt(btn.dataset.midx, 10);
           expandedModuleIndex = expandedModuleIndex === idx ? null : idx;
           renderTab('knowledge');
