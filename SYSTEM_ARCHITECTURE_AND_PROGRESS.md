@@ -10,6 +10,9 @@
 
 The system provides real-time satellite meteorology, AI-driven soil & land agro-economics, domain-specific task engines, direct government scheme matching, integrated marketplace price feeds, structured scientific coursework, and multi-dialect voice assistance.
 
+- 🌐 **Live Public App**: [https://snigdha-0210.github.io/Agricultural-System/](https://snigdha-0210.github.io/Agricultural-System/)
+- 📦 **GitHub Repository**: [https://github.com/Snigdha-0210/Agricultural-System](https://github.com/Snigdha-0210/Agricultural-System)
+
 ---
 
 ## 🏛️ System Architecture

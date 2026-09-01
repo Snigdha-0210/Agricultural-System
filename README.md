@@ -10,6 +10,13 @@
 
 ---
 
+## 🌐 Live Web Application & Deployments
+- 🚀 **Live Production Web App (GitHub Pages)**: [**https://snigdha-0210.github.io/Agricultural-System/**](https://snigdha-0210.github.io/Agricultural-System/)
+- 📦 **GitHub Repository**: [**https://github.com/Snigdha-0210/Agricultural-System**](https://github.com/Snigdha-0210/Agricultural-System)
+- 🌿 **Netlify App**: [**https://app.netlify.com/teams/snigdhagorai10/sites**](https://app.netlify.com/teams/snigdhagorai10/sites)
+
+---
+
 ## 🌟 Key Highlights & Features
 
 - 🌍 **AI Land & Soil Geo-Agronomy Advisor**:
